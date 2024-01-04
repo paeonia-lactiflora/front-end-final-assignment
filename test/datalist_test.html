@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>datalist_test</title>
+    </head>
+    <!-- jQuery -->
+    <script src="../jQuery/awesome-jquery-3.7.1.js"></script>
+
+    <!-- bootstrap.css -->
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css" />
+
+    <!-- bootstrap.js -->
+    <script src="../bootstrap/js/bootstrap.js"></script>
+
+    <body>
+        <form class="needs-validation container" novalidate>
+            <label for="exampleDataList" class="form-label">Datalist example</label>
+            <input class="form-control is-invalid" list="datalistOptions" id="exampleDataList" placeholder="Type to search..." required/>
+            <datalist id="datalistOptions">
+                <option value="San Francisco"></option>
+                <option value="New York"></option>
+                <option value="Seattle"></option>
+                <option value="Los Angeles"></option>
+                <option value="Chicago"></option>
+                <option value="San Francisco"></option>
+                <option value="New York"></option>
+                <option value="Seattle"></option>
+                <option value="Los Angeles"></option>
+                <option value="Chicago"></option>
+                <option value="San Francisco"></option>
+                <option value="New York"></option>
+                <option value="Seattle"></option>
+                <option value="Los Angeles"></option>
+                <option value="Chicago"></option>
+            </datalist>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Looks bad!</div>
+
+            <div class="col-12">
+                <button class="btn btn-primary" type="submit">Submit form</button>
+            </div>
+        <form/>
+
+        <script>
+            $(function () {
+                $('button').on('click', function () {
+                    event.preventDefault()
+                    event.stopPropagation()
+                    
+                    $('input').toggleClass('is-invalid')
+                    $('input').toggleClass('is-valid')
+                })
+            })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>AWESOME GET IN</title>
+
+        <!-- favicon -->
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+
+        <!-- bootstrap.css -->
+        <link rel="stylesheet" href="../bootstrap/css/bootstrap.css" />
+
+        <!-- bootstrap-datepicker.css -->
+        <link rel="stylesheet" href="../datepicker/css/bootstrap-datepicker.css" />
+
+        <!-- my css -->
+        <link rel="stylesheet" href="../css/common.css" />
+        <link rel="stylesheet" href="../css/get_in.css" />
+
+        <!-- jQuery -->
+        <script src="../jQuery/awesome-jquery-3.7.1.js"></script>
+
+        <!-- bootstrap.js -->
+        <script src="../bootstrap/js/bootstrap.js"></script>
+        <script src="../bootstrap/js/bootstrap.bundle.js"></script>
+
+        <!-- bootstrap-datepicker.js -->
+        <script src="../datepicker/js/bootstrap-datepicker.js"></script>
+        <!-- bootstrap-datepicker.zh-CN -->
+        <script src="../datepicker/js/bootstrap-datepicker.zh-CN.min.js"></script>
+
+        <!-- my js -->
+        <script src="../js/get_in.js"></script>
+        <script src="../js/common_btn.js"></script>
+    </head>
+
+    <body>
+        <div class="container">
+            <form class="gy-4 gx-3 needs-validation row" novalidate>
+                <!-- 姓名 -->
+                <div class="form-floating col-md-6">
+                    <input autocomplete="off" type="text" class="valueBox form-control" id="name" placeholder="" />
+                    <label for="name">姓名:</label>
+                    <div class="invalid-feedback">无效姓名!</div>
+                    <!-- <div class="invalid-feedback">Looks bad!</div> -->
+                </div>
+
+                <!-- 身份证号 -->
+                <div class="form-floating col-md-6">
+                    <input autocomplete="off" type="text" class="valueBox form-control" id="cardId" placeholder="" />
+                    <label for="cardId">身份证号码:</label>
+                    <div class="invalid-feedback">无效身份证号码!</div>
+                </div>
+
+                <!-- 出生年月日 -->
+                <div class="birthdayBox form-floating col-md-6">
+                    <input type="text" id="birthday" class="valueBox form-control" placeholder="" autocomplete="off" />
+                    <label for="birthday">出生日期:</label>
+                    <div class="invalid-feedback">无效出生日期!</div>
+                </div>
+
+                <!-- 手机号码 -->
+                <div class="form-floating col-md-6">
+                    <input
+                        autocomplete="off"
+                        type="text"
+                        class="valueBox form-control"
+                        id="phoneNumber"
+                        placeholder=""
+                    />
+                    <label for="phoneNumber">手机号码:</label>
+                    <div class="invalid-feedback">无效手机号码!</div>
+                </div>
+
+                <!-- 毕业学校 -->
+                <div class="form-floating col-md-6">
+                    <input
+                        autocomplete="off"
+                        type="text"
+                        class="valueBox form-control"
+                        id="schoolOfGraduation"
+                        placeholder=""
+                    />
+                    <label for="schoolOfGraduation">毕业学校:</label>
+                    <div class="invalid-feedback">无效毕业学校!</div>
+                </div>
+
+                <!-- 专业 -->
+                <div class="form-floating col-md-6">
+                    <input autocomplete="off" type="text" class="valueBox form-control" id="major" placeholder="" />
+                    <label for="major">专业:</label>
+                    <div class="invalid-feedback">无效专业!</div>
+                </div>
+
+                <!--  民族 -->
+                <div class="col-md-6 nationZone form-floating">
+                    <input
+                        autocomplete="off"
+                        class="form-control valueBox"
+                        list="nationDatalist"
+                        id="nationInput"
+                        placeholder=""
+                    />
+                    <label for="nation" class="form-label">民族:</label>
+                    <datalist id="nationDatalist"></datalist>
+                    <div class="invalid-feedback">无效民族!</div>
+                </div>
+
+                <!--  政治面貌 -->
+                <div class="col-md-6 politicsStatusZone form-floating">
+                    <input
+                        autocomplete="off"
+                        class="form-control valueBox"
+                        list="politicsStatusDatalist"
+                        id="politicsStatusInput"
+                        placeholder=""
+                    />
+                    <label for="politicsStatus" class="form-label">政治面貌:</label>
+                    <datalist id="politicsStatusDatalist"> </datalist>
+                    <div class="invalid-feedback">无效政治面貌!</div>
+                </div>
+
+                <div class="row gy-4 choiceRow">
+                    <!--  兴趣爱好 -->
+                    <div class="col-md-6 hobbiesZone" id="hobbiesZone">
+                        <div class="form-check form-check-inline">
+                            <input
+                                autocomplete="off"
+                                class="hobby valueBox form-check-input"
+                                type="checkbox"
+                                id="basketball"
+                            />
+                            <label class="glowBtn form-check-label" for="basketball">篮球</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input
+                                autocomplete="off"
+                                class="form-check-input hobby valueBox"
+                                type="checkbox"
+                                id="football"
+                            />
+                            <label class="glowBtn form-check-label" for="football">足球</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input
+                                autocomplete="off"
+                                class="form-check-input hobby valueBox"
+                                type="checkbox"
+                                id="reading"
+                            />
+                            <label class="glowBtn form-check-label" for="reading">读书</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input
+                                autocomplete="off"
+                                class="form-check-input hobby valueBox"
+                                type="checkbox"
+                                id="movie"
+                            />
+                            <label class="glowBtn form-check-label" for="movie">电影</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input
+                                autocomplete="off"
+                                class="form-check-input hobby valueBox"
+                                type="checkbox"
+                                id="music"
+                            />
+                            <label class="glowBtn form-check-label" for="music">音乐</label>
+                        </div>
+                        <div class="invalid-feedback">至少选择两项!</div>
+                    </div>
+
+                    <!--  性别 -->
+                    <div class="col-md-6 genderZone">
+                        <div class="form-check form-check-inline">
+                            <input
+                                autocomplete="off"
+                                class="valueBox form-check-input genderInput"
+                                type="radio"
+                                name="gender"
+                                id="male"
+                                value="male"
+                            />
+                            <label class="form-check-label" for="male">男</label>
+                        </div>
+                        <div class="form-check form-check-inline female-form-check">
+                            <input
+                                autocomplete="off"
+                                class="valueBox form-check-input genderInput"
+                                type="radio"
+                                name="gender"
+                                id="female"
+                                value="female"
+                            />
+                            <label class="form-check-label" for="female">女</label>
+                        </div>
+                        <div class="invalid-feedback">请选择性别!</div>
+                    </div>
+                </div>
+
+                <!-- 个人介绍 -->
+                <div class="form-floating">
+                    <textarea class="form-control valueBox" placeholder="" id="selfIntroduction"></textarea>
+                    <label for="selfIntroduction">个人介绍:</label>
+                </div>
+
+                <div class="btnZone">
+                    <!-- submit button -->
+                    <button type="submit" class="glowBtn glowBtn-capsule glowBtn-bold" id="submitBtn">submit</button>
+
+                    <!-- reset button -->
+                    <button type="reset" class="glowBtn glowBtn-capsule glowBtn-bold" id="resetBtn">reset</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- home button -->
+        <div
+            class="homeBtn glowBtn glowBtn-circle scale-lg"
+            data-bs-toggle="tooltip"
+            data-bs-placement="right"
+            title="首页"
+        >
+            <svg
+                t="1703490775409"
+                class="icon"
+                viewBox="0 0 1024 1024"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                p-id="4438"
+                height="200"
+            >
+                <path
+                    d="M937.067069 482.335377 556.719504 106.839307c-1.89107-2.251274-6.123464-6.173606-11.997242-10.048867-9.889231-6.522554-21.093411-10.486842-33.388435-10.486842-13.137205 0-24.610514 3.984754-34.245965 10.590196-5.826705 3.997034-9.844206 8.076956-12.117992 11.117199L85.643566 482.381425c-14.653745 14.434757-14.653745 37.890982 0 52.358485 14.538111 14.380522 33.883715 8.316409 50.366108-7.919367L161.532977 501.587859l350.847693-339.869664 374.329501 368.073007c20.077268 13.223163 37.773302 17.377786 50.358945 4.946662C951.720813 520.273431 951.720813 496.801856 937.067069 482.335377z"
+                    fill="currentColor"
+                    p-id="4439"
+                ></path>
+                <path
+                    d="M793.007045 462.046285c-17.391089 0-31.567973 13.938454-31.634488 31.236422l0 0.085958 0 0.089028 0 350.143659c0 17.416671-14.371312 31.602765-32.119535 31.602765l-84.129072 0 0-192.166671c0-49.818639-40.803311-90.111321-91.14486-90.111321l-85.268012 0c-50.326199 0-91.143836 40.300868-91.143836 90.111321l0 192.166671L293.437146 875.204116c-17.750269 0-32.119535-14.186094-32.119535-31.602765L261.317611 493.391177c-0.033769-17.355273-14.21884-31.343869-31.611975-31.343869-17.418718 0-31.589462 13.96506-31.658024 31.302937l0 354.429265c0 49.844222 40.808428 90.133833 91.14486 90.133833l141.253094 0 10.389628 0 0-10.391674 0-240.262062c0-17.410532 14.365172-31.580253 32.119535-31.580253l76.801177 0c17.756409 0 32.119535 14.169721 32.119535 31.580253l0 240.262062 0 10.391674 10.391674 0 141.253094 0c50.321082 0 91.14486-40.297798 91.14486-90.133833L824.665069 493.322615C824.527946 475.958132 810.380738 462.046285 793.007045 462.046285z"
+                    fill="currentColor"
+                    p-id="4440"
+                ></path>
+            </svg>
+        </div>
+
+        <!-- info button-->
+        <div class="infoBtnTooltip" data-bs-toggle="tooltip" data-bs-placement="left" title="更多信息">
+            <div
+                type="button"
+                class="glowBtn glowBtn-circle infoBtn scale-lg"
+                data-bs-toggle="modal"
+                data-bs-target="#infoModal"
+            >
+                <svg
+                    t="1703506332512"
+                    class="icon"
+                    viewBox="0 0 1024 1024"
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    p-id="5419"
+                >
+                    <path
+                        fill="currentColor"
+                        d="M512 224m-64 0a64 64 0 1 0 128 0 64 64 0 1 0-128 0Z"
+                        p-id="5420"
+                    ></path>
+                    <path
+                        fill="currentColor"
+                        d="M544 392h-64c-4.4 0-8 3.6-8 8v464c0 4.4 3.6 8 8 8h64c4.4 0 8-3.6 8-8V400c0-4.4-3.6-8-8-8z"
+                        p-id="5421"
+                    ></path>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="infoModalLabel">一些调试时的快捷键, 可以玩🙂</h5>
+                    </div>
+                    <div class="modal-body">
+                        <li><kbd>h</kbd>: home 按钮</li>
+                        <li><kbd>i</kbd>: info 按钮</li>
+                        <li><kbd>m</kbd>: 播放按钮 (music)</li>
+                        <li><kbd>t</kbd>: 主题按钮</li>
+                        <li><kbd>d</kbd>: 删除 localStorage 中的 theme</li>
+                        <li><kbd>v</kbd>: 删除 localStorage 中的 isVisited</li>
+                        <li><kbd>s</kbd>: submit 按钮</li>
+                        <li><kbd>c</kbd>: reset 按钮 (clear)</li>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="glowBtn btn" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- theme switch -->
+        <div
+            class="themeBtn glowBtn glowBtn-circle scale-lg"
+            data-bs-toggle="tooltip"
+            data-bs-placement="right"
+            title="切换主题"
+        >
+            <!-- moon -->
+            <svg
+                t="1699778537580"
+                class="icon moon"
+                viewBox="0 0 1024 1024"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                p-id="13590"
+            >
+                <path
+                    d="M935.538601 630.40178c-11.43005-11.432249-28.673759-14.738607-43.531086-8.353536-46.733115 20.10317-96.362866 30.296859-147.50719 30.296859-99.589478 0-193.221796-38.783705-263.640252-109.20316-108.636744-108.636744-139.609745-270.022125-78.9083-411.148441 6.388069-14.85233 3.078713-32.098837-8.353536-43.532285-11.432249-11.432249-28.675758-14.743604-43.532285-8.354536-52.637312 22.64025-100.017388 54.809439-140.82552 95.616372-85.346135 85.346135-132.346869 198.821199-132.346869 319.519766 0 120.699566 47.001733 234.172631 132.347868 319.518766s198.821199 132.349067 319.517567 132.349067c120.699566 0 234.172431-47.002932 319.520765-132.351066 40.808132-40.810131 72.977122-88.190207 95.615373-140.82552C950.282205 659.081735 946.971849 641.834029 935.538601 630.40178z"
+                    fill="currentColor"
+                    p-id="13591"
+                ></path>
+            </svg>
+
+            <!-- sun -->
+            <svg
+                t="1699778893594"
+                class="icon sun"
+                viewBox="0 0 1024 1024"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                p-id="706"
+            >
+                <path
+                    fill="currentColor"
+                    d="M240.64 725.333333l-30.293333 30.293334a42.666667 42.666667 0 0 0 0 60.16 42.666667 42.666667 0 0 0 60.16 0l30.293333-30.293334A42.666667 42.666667 0 0 0 240.64 725.333333zM213.333333 512a42.666667 42.666667 0 0 0-42.666666-42.666667H128a42.666667 42.666667 0 0 0 0 85.333334h42.666667a42.666667 42.666667 0 0 0 42.666666-42.666667z m298.666667-298.666667a42.666667 42.666667 0 0 0 42.666667-42.666666V128a42.666667 42.666667 0 0 0-85.333334 0v42.666667a42.666667 42.666667 0 0 0 42.666667 42.666666zM240.64 300.8a42.666667 42.666667 0 0 0 29.866667 12.373333 42.666667 42.666667 0 0 0 30.293333-12.373333 42.666667 42.666667 0 0 0 0-60.16l-30.293333-30.293333a42.666667 42.666667 0 0 0-60.16 60.16z m512 12.373333a42.666667 42.666667 0 0 0 29.866667-12.373333l30.293333-30.293333a42.666667 42.666667 0 1 0-60.16-60.16l-27.306667 30.293333a42.666667 42.666667 0 0 0 0 60.16 42.666667 42.666667 0 0 0 28.16 12.373333zM896 469.333333h-42.666667a42.666667 42.666667 0 0 0 0 85.333334h42.666667a42.666667 42.666667 0 0 0 0-85.333334z m-384 341.333334a42.666667 42.666667 0 0 0-42.666667 42.666666v42.666667a42.666667 42.666667 0 0 0 85.333334 0v-42.666667a42.666667 42.666667 0 0 0-42.666667-42.666666z m271.36-85.333334A42.666667 42.666667 0 0 0 725.333333 783.36l30.293334 30.293333a42.666667 42.666667 0 0 0 60.16 0 42.666667 42.666667 0 0 0 0-60.16zM512 277.333333a234.666667 234.666667 0 1 0 234.666667 234.666667A235.093333 235.093333 0 0 0 512 277.333333z m0 384a149.333333 149.333333 0 1 1 149.333333-149.333333 149.333333 149.333333 0 0 1-149.333333 149.333333z"
+                    p-id="707"
+                ></path>
+            </svg>
+        </div>
+
+        <!-- song button -->
+        <div
+            id="playButton"
+            class="glowBtn audioBtn glowBtn-circle scale-lg"
+            data-bs-toggle="tooltip"
+            data-bs-placement="left"
+            title="听歌"
+        >
+            <!-- play -->
+            <svg
+                t="1700115676185"
+                class="icon playSvg"
+                viewBox="0 0 1024 1024"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                p-id="7356"
+            >
+                <path
+                    d="M254.132978 880.390231c-6.079462 0-12.155854-1.511423-17.643845-4.497431-11.828396-6.482645-19.195178-18.85851-19.195178-32.341592L217.293955 180.465165c0-13.483082 7.366781-25.898857 19.195178-32.346709 11.787464-6.483668 26.226315-5.928013 37.57478 1.363044L789.797957 481.028615c10.536984 6.77531 16.908088 18.456351 16.908088 30.979572 0 12.523221-6.371104 24.203238-16.908088 30.982642L274.063913 874.53385C267.983427 878.403994 261.060761 880.390231 254.132978 880.390231L254.132978 880.390231zM254.132978 880.390231"
+                    fill="currentColor"
+                    p-id="7357"
+                ></path>
+            </svg>
+
+            <!-- pause -->
+            <svg
+                t="1700115822549"
+                class="icon pauseSvg"
+                viewBox="0 0 1024 1024"
+                version="1.1"
+                xmlns="http://www.w3.org/2000/svg"
+                p-id="8332"
+            >
+                <path
+                    d="M304 176h80v672h-80zM712 176h-64c-4.4 0-8 3.6-8 8v656c0 4.4 3.6 8 8 8h64c4.4 0 8-3.6 8-8V184c0-4.4-3.6-8-8-8z"
+                    p-id="8333"
+                    fill="currentColor"
+                ></path>
+            </svg>
+        </div>
+
+        <!-- Passionfruit -->
+        <!-- <audio id="audioPlayer" src="http://music.163.com/song/media/outer/url?id=466343434.mp3"></audio> -->
+        <audio id="audioPlayer" src=""></audio>
+    </body>
+</html>

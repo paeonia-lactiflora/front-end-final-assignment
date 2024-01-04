@@ -1,0 +1,159 @@
+.z-index-999 {
+  z-index: 999;
+}
+.container {
+  padding: 0;
+  background-color: transparent;
+  box-shadow: none;
+}
+.container.carouselContainer {
+  margin-top: 30px;
+  border-radius: 0.6rem;
+  overflow: hidden;
+}
+#carouselCaptions .carousel-item {
+  height: 45vh;
+  filter: brightness(var(--user-carousel-img-brightness));
+}
+#carouselCaptions .carousel-item h5,
+#carouselCaptions .carousel-item p {
+  font-weight: 300;
+  line-height: 1.2;
+}
+#carouselCaptions .carousel-item p span:nth-child(-n + 2) {
+  margin-right: 0.8rem;
+}
+.useful-cards,
+.useless-cards {
+  margin-top: 4rem;
+}
+.card {
+  border: none;
+  border-radius: 0.6rem;
+  overflow: hidden;
+}
+.card * {
+  letter-spacing: 0.1rem;
+}
+.card.ichikaCard .card-text a {
+  color: inherit;
+  text-decoration: none;
+}
+.card.ichikaCard .card-text a:hover {
+  text-decoration: underline;
+}
+.card .imgBox img {
+  aspect-ratio: 1980/1080;
+  transition: all 0.3s;
+  filter: brightness(var(--user-card-brightness));
+}
+.card .imgBox img:hover {
+  filter: brightness(var(--user-hover-brightness));
+}
+.card .imgBox:hover img {
+  transform: scale(1.05);
+}
+.card .card-body a.btn {
+  width: 100%;
+}
+@media (max-width: 768px) {
+  .card {
+    margin-top: 4rem;
+  }
+}
+.getInBtn {
+  position: fixed;
+  left: 30px;
+  top: 30px;
+}
+.getInBtn svg {
+  height: 65%;
+  transform: translateX(1px);
+}
+.guide {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  font-size: 1.1rem;
+}
+.guide .btnSlider {
+  display: none;
+  position: absolute;
+  width: 65px;
+  height: 65px;
+  background-color: var(--bs-body-bg);
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+.guide .guideContent {
+  position: absolute;
+  display: none;
+  padding: 1rem;
+  height: 110px;
+  background-color: var(--bs-body-bg);
+  border-radius: 0.5rem;
+}
+.guide .guideContent#infoGuide {
+  height: 145px;
+}
+.guide .guideContent button {
+  position: absolute;
+  right: 1rem;
+  text-transform: uppercase;
+}
+.modal-footer {
+  justify-content: space-between;
+}
+.space {
+  color: transparent;
+  user-select: none;
+}
+.toastBox {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.toastBox * {
+  background-color: var(--user-bg-color);
+}
+.toastBox .toast .toast-header,
+.toastBox .toast .toast-body {
+  padding: 0.75rem 1rem;
+}
+.toastBox .toast .toast-header {
+  border-color: rgb(var(--user-checked-color-rgb));
+}
+.toastBox .toast .toast-header img {
+  width: 20px;
+  height: 20px;
+}
+.toastBox .toast .toast-header .btn-close {
+  background-color: transparent;
+  color: var(--user-btn-font-color);
+}
+d1v {
+  display: none;
+}
+footer {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  color: var(--user-btn-font-color);
+  animation: footerAnim 1s infinite alternate;
+}
+@keyframes footerAnim {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

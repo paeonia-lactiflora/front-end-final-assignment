@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <!--第一步挂载插件文件-->
+
+        <!-- css -->
+        <link rel="stylesheet" href="../bootstrap/css/bootstrap.css" />
+        <link rel="stylesheet" href="../datepicker/css/bootstrap-datepicker.css" />
+
+        <!-- user css -->
+        <!-- <link rel="stylesheet" href="./datepicker_test.css" /> -->
+
+        <!-- js -->
+        <script src="../jQuery/awesome-jquery-3.7.1.js"></script>
+
+        <script src="../bootstrap/js/bootstrap.js"></script>
+        <script src="../datepicker/js/bootstrap-datepicker.js"></script>
+        <script src="../datepicker/js/bootstrap-datepicker.zh-CN.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <input type="text" id="inputDate" class="form-control" placeholder="请选择日期" />
+        </div>
+
+        <script>
+            $('#inputDate').datepicker({
+                language: 'zh-CN', //语言
+                autoclose: true, //选择后自动关闭
+                clearBtn: true, //清除按钮
+                format: 'yyyy-mm-dd', //日期格式
+                todayBtn: true, //显示今日按钮
+                todayHighlight: true, //高亮显示今天的日期
+                weekStart: 1, //一周从哪一天开始
+                startDate: new Date().getFullYear - 150 + '-1-1', // 开始日期 (最大150岁)
+
+                endDate: new Date(),
+
+                // initialDate: new Date(), // ? '2019-10-11 20:15:11',//'2019-10-11 20:15:11'//默认显示的日期时间 ，默认值 (怎么没反应?)
+            })
+        </script>
+    </body>
+</html>

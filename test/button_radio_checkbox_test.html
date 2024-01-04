@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>button_radio_checkbox_test</title>
+        <!-- jQuery -->
+        <script src="../jQuery/awesome-jquery-3.7.1.js"></script>
+
+        <!-- bootstrap.css -->
+        <link rel="stylesheet" href="../bootstrap/css/bootstrap.css" />
+
+        <!-- bootstrap.js -->
+        <script src="../bootstrap/js/bootstrap.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <input type="checkbox" class="btn-check" id="btn-check-outlined" autocomplete="off" />
+            <label class="btn btn-outline-primary" for="btn-check-outlined">Single toggle</label><br />
+
+            <input type="checkbox" class="btn-check" id="btn-check-2-outlined" checked autocomplete="off" />
+            <label class="btn btn-outline-secondary" for="btn-check-2-outlined">Checked</label><br />
+
+            <input
+                type="radio"
+                class="btn-check"
+                name="options-outlined"
+                id="success-outlined"
+                autocomplete="off"
+                checked
+            />
+            <label class="btn btn-outline-success" for="success-outlined">Checked success radio</label>
+
+            <input type="radio" class="btn-check" name="options-outlined" id="danger-outlined" autocomplete="off" />
+            <label class="btn btn-outline-danger" for="danger-outlined">Danger radio</label>
+        </div>
+    </body>
+</html>

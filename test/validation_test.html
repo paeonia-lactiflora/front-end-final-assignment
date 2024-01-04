@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>validation_test</title>
+        <!-- jQuery -->
+        <script src="../jQuery/awesome-jquery-3.7.1.js"></script>
+
+        <!-- bootstrap.css -->
+        <link rel="stylesheet" href="../bootstrap/css/bootstrap.css" />
+
+        <!-- bootstrap.js -->
+        <script src="../bootstrap/js/bootstrap.js"></script>
+
+        <style>
+            .hobbiesZone.is-valid > .valid-feedback {
+                display: block;
+            }
+
+            .hobbiesZone.is-invalid > .invalid-feedback {
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <form class="g-2 needs-validation container" novalidate>
+            <div class="col-md-6 form-floating">
+                <!-- ! 给input加is-invalid即可触发警告 -->
+                <input type="text" class="form-control valueBox" id="name" placeholder="" />
+                <label for="validationCustom01" class="form-label">姓名:</label>
+                <!-- 合法信息类名valid-feedback -->
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Looks bad!</div>
+            </div>
+            <div class="col-md-6">
+                <label for="validationCustom02" class="form-label">电话号码</label>
+                <input type="text" class="form-control valueBox" id="phoneNumber" />
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Looks bad!</div>
+            </div>
+            <div class="col-md-6">
+                <label for="validationCustomUsername" class="form-label">Username</label>
+                <div class="input-group has-validation">
+                    <span class="input-group-text" id="inputGroupPrepend">@</span>
+                    <input
+                        type="text"
+                        class="form-control valueBox"
+                        id="validationCustomUsername"
+                        aria-describedby="inputGroupPrepend"
+                    />
+                    <!-- 非法信息类名invalid-feedback -->
+                    <div class="invalid-feedback">Please choose a username.</div>
+                </div>
+            </div>
+            <div class="col-md-6 form-floating">
+                <input type="text" class="form-control valueBox" id="cardId" placeholder="" name="cardId" />
+                <label for="cardId" class="form-label">身份证号码</label>
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Looks bad!</div>
+            </div>
+            <div class="col-md-6">
+                <label for="validationCustom04" class="form-label">State</label>
+                <select class="form-select valueBox" id="validationCustom04">
+                    <option selected disabled value="">Choose...</option>
+                    <option>...</option>
+                </select>
+                <div class="invalid-feedback">Please select a valid state.</div>
+            </div>
+            <div class="col-md-6">
+                <label for="validationCustom05" class="form-label">Zip</label>
+                <input type="text" class="form-control valueBox" id="validationCustom05" />
+                <div class="invalid-feedback">Please provide a valid zip.</div>
+            </div>
+
+            <div class="col-md-6 hobbiesZone" id="hobbiesZone">
+                <div class="form-check form-check-inline">
+                    <input class="hobby valueBox btn-check" type="checkbox" value="" id="basketball" />
+                    <label class="btn btn-outline-primary form-check-label" for="basketball">篮球</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input
+                        class="form-check-input hobby valueBox form-control-lg"
+                        type="checkbox"
+                        value=""
+                        id="football"
+                    />
+                    <label class="form-check-label" for="football">足球</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input
+                        class="form-check-input hobby valueBox form-control-lg"
+                        type="checkbox"
+                        value=""
+                        id="reading"
+                    />
+                    <label class="form-check-label" for="reading">读书</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input hobby valueBox" type="checkbox" value="" id="movie" />
+                    <label class="form-check-label" for="movie">电影</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input hobby valueBox" type="checkbox" value="" id="music" />
+                    <label class="form-check-label" for="music">音乐</label>
+                </div>
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Looks bad!</div>
+            </div>
+
+            <div class="col-md-6 nationZone">
+                <label for="nation" class="form-label">民族:</label>
+                <input
+                    class="form-control valueBox"
+                    list="datalistOptions"
+                    id="nation"
+                    placeholder="Type to search..."
+                    required
+                />
+                <datalist id="datalistOptions">
+                    <option value="San Francisco"></option>
+                    <option value="New York"></option>
+                    <option value="Seattle"></option>
+                    <option value="Los Angeles"></option>
+                    <option value="Chicago"></option>
+                    <option value="San Francisco"></option>
+                    <option value="New York"></option>
+                    <option value="Seattle"></option>
+                </datalist>
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Looks bad!</div>
+            </div>
+
+            <div class="col-12">
+                <button class="btn btn-primary" type="submit">Submit form</button>
+            </div>
+        </form>
+
+        <script>
+            $(function () {
+                'use strict'
+
+                function validate(valueBox) {
+                    // 姓名
+                    function isNameValid(name) {
+                        // 是否为中文
+                        let regex = /^[\u4e00-\u9fa5]+$/
+                        return regex.test(name)
+                    }
+
+                    // 电话号码
+                    function isPhoneNumberValid(phoneNumber) {
+                        // 手机号(mobile phone)中国(宽松), 只要是13,14,15,16,17,18,19开头即可"
+                        let regex = /^(?:(?:\+|00)86)?1[3-9]\d{9}$/
+                        return regex.test(phoneNumber)
+                    }
+
+                    // 身份证号码
+                    function isCardIdValid(cardId) {
+                        // 身份证号(2代,18位数字),最后一位是校验位,可能为数字或字符X
+                        let regex =
+                            /^[1-9]\d{5}(?:18|19|20)\d{2}(?:0[1-9]|10|11|12)(?:0[1-9]|[1-2]\d|30|31)\d{3}[\dXx]$/
+                        return regex.test(cardId)
+                    }
+
+                    // 兴趣爱好
+                    function isHobbiesCountValid(hobbiesCount) {
+                        // 至少选择两项
+                        return $('.hobby:checked').length >= 2 ? true : false
+                    }
+
+                    let isDataValid = false
+
+                    switch (valueBox.prop('id')) {
+                        case 'name':
+                            isDataValid = isNameValid(valueBox.val())
+                            break
+                        case 'phoneNumber':
+                            isDataValid = isPhoneNumberValid(valueBox.val())
+                            break
+                        case 'cardId':
+                            isDataValid = isCardIdValid(valueBox.val())
+                            break
+                        case 'basketball':
+                        case 'football':
+                        case 'reading':
+                        case 'movie':
+                        case 'music':
+                            isDataValid = isHobbiesCountValid(valueBox.val())
+                            break
+                        default:
+                            isDataValid = valueBox.val() !== '' ? true : false
+                    }
+
+                    if (isDataValid) {
+                        // 合法
+                        // 如果是爱好复选框
+                        if (valueBox.hasClass('hobby')) {
+                            $('.hobby').each(function () {
+                                $(this).removeClass('is-invalid')
+                                $(this).addClass('is-valid')
+
+                                // checkbox大盒子 feedback 处理
+                                $('.hobbiesZone').removeClass('is-invalid')
+                                $('.hobbiesZone').addClass('is-valid')
+                            })
+                        } else {
+                            valueBox.removeClass('is-invalid')
+                            valueBox.addClass('is-valid')
+                        }
+                    } else {
+                        // 非法
+                        // 如果是爱好复选框
+                        if (valueBox.hasClass('hobby')) {
+                            $('.hobby').each(function () {
+                                $(this).removeClass('is-valid')
+                                $(this).addClass('is-invalid')
+
+                                // checkbox大盒子 feedback 处理
+                                $('.hobbiesZone').removeClass('is-valid')
+                                $('.hobbiesZone').addClass('is-invalid')
+                            })
+                        } else {
+                            valueBox.removeClass('is-valid')
+                            valueBox.addClass('is-invalid')
+                        }
+                    }
+                }
+
+                // 输入框输入时, 检查数据是否有效
+                $('.valueBox').on('input', function (event) {
+                    validate($(this))
+                })
+
+                // 选中复选框时, 检查选中数量
+                $('.hobby').on('change', function (event) {
+                    validate($(this))
+                })
+
+                // 表单提交后, 检查每个输入框
+                $('form').on('submit', function () {
+                    $('.valueBox').each(function () {
+                        validate($(this))
+                    })
+
+                    // 如果存在无效输入, 阻止表单提交
+                    if ($('.valueBox.is-invalid')[0]) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+                })
+            })
+            // $(document).ready(function () {})
+            // Example starter JavaScript for disabling form submissions if there are invalid fields
+            // ;(function () {
+            //     'use strict' // 这是 JavaScript 中的严格模式声明，它使得在严格模式下进行 JavaScript 编码，有助于减少一些不合理的行为并且使得编译器能够进行更多的优化。
+
+            //     // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            //     let forms = document.querySelectorAll('.needs-validation') // form 标签的类名
+
+            //     // Loop over them and prevent submission
+            //     Array.prototype.slice.call(forms).forEach(function (form) {
+            //         form.addEventListener(
+            //             'submit',
+            //             function (event) {
+            //                 // 检查表单是否有效
+            //                 if (!form.checkValidity()) {
+            //                     // 阻止表单提交
+            //                     event.preventDefault()
+            //                     event.stopPropagation()
+            //                 }
+
+            //                 // 然后为无效的表单添加了一个 was-validated 的类名
+            //                 form.classList.add('was-validated')
+            //             },
+            //             false
+            //         )
+            //     })
+            // })()
+        </script>
+    </body>
+</html>

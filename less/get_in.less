@@ -1,0 +1,373 @@
+:root {
+    // 男色 darker
+    --user-male-blue-rgb: var(--user-blue-rgb);
+    // 女色
+    --user-female-pink-rgb: 214, 51, 132;
+
+    caret-color: var(--user-btn-font-color);
+}
+
+
+/*customize*/
+.form-control {
+    background-color: transparent;
+    border-color: rgb(var(--user-border-color-rgb));
+
+    &:focus {
+        // color: var(--bs-body-color);
+        // background-color: var(--bs-form-control-bg);
+        background-color: transparent;
+        border-color: rgb(var(--user-checked-color-rgb));
+        box-shadow: 0 0 0 0.3rem rgba(var(--user-checked-color-rgb), 0.3);
+        outline: 0;
+    }
+}
+
+// 聚焦或有值时
+.form-floating>.form-control:focus~label,
+.form-floating>.form-control:not(:placeholder-shown)~label {
+    opacity: 1;
+    color: var(--user-btn-font-color);
+}
+
+/*customize*/
+
+
+
+body {
+    display: flex;
+    height: 100vh;
+}
+
+
+.container {
+    margin: auto;
+    padding: 2rem;
+
+    max-width: 1000px;
+
+    border-radius: 15px;
+
+    // background-color: var(--user-container-bg-color);
+
+    transform: translateY(-3vh);
+
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+// 微调
+[data-theme='light'] {
+    .container {
+        // border-color: var(--user-bg-color);
+    }
+}
+
+
+// 移动端布局
+@media (max-width: 768px) {
+
+    // 内边距
+    body {
+        --user-phone-gutter-x: .8rem;
+    }
+
+    .container {
+        padding: 2rem var(--user-phone-gutter-x);
+        padding-top: 4.2rem;
+
+        border-radius: 0;
+
+        transform: translateY(0);
+
+        // background-color: inherit;
+    }
+
+    .homeBtn,
+    .audioBtn,
+    .themeBtn {
+        top: var(--user-phone-gutter-x);
+    }
+
+    .homeBtn {
+        left: var(--user-phone-gutter-x);
+
+        // svg 有点斜
+        svg {
+            transform: translate(.5px, .5px);
+        }
+    }
+
+    .audioBtn {
+        right: var(--user-phone-gutter-x);
+    }
+
+    .themeBtn {
+        left: 50%;
+        transform: translateX(-50%) scale(1.01) !important;
+    }
+}
+
+
+// 浮动输入框label微调
+.form-floating>label {
+    left: 5px;
+}
+
+#selfIntroduction {
+    height: 100px;
+}
+
+
+// 出生日期
+.birthdayBox {
+    height: 58px;
+
+    input {
+        height: 100%;
+    }
+}
+
+
+// 单选框, 复选框一行的位置完善
+.choiceRow {
+    padding: 0;
+
+    .genderZone,
+    .hobbiesZone {
+        &.is-valid {
+            &>.valid-feedback {
+                display: block;
+            }
+        }
+
+        &.is-invalid {
+            &>.invalid-feedback {
+                display: block;
+            }
+        }
+
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        flex-wrap: wrap;
+
+        margin-top: 0;
+        padding-right: 0;
+    }
+
+    .hobbiesZone {
+        padding-left: 20px;
+    }
+
+    .genderZone {
+        padding-left: 19px;
+
+        .form-check {
+            width: 47%;
+        }
+    }
+
+    // 移动端
+    @media (max-width: 768px) {
+        .genderZone {
+            margin-top: var(--bs-gutter-y);
+        }
+    }
+}
+
+
+// 单选和复选框 选中与校验样式
+.form-check {
+    margin: 0;
+    padding: 0;
+
+    height: 58px;
+    width: 15%;
+
+    input {
+        display: none;
+
+        // 校验样式 (不合法)
+        &.is-invalid~label {
+            border-color: var(--bs-danger);
+        }
+    }
+
+    label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        height: 100%;
+        width: 100%;
+
+        border: var(--bs-border-width) solid rgb(var(--user-border-color-rgb));
+        border-radius: 5px;
+
+        color: var(--user-font-color);
+
+        cursor: pointer;
+
+        &[for='male'] {
+            --user-checked-color-rgb: var(--user-male-blue-rgb);
+        }
+
+        &[for='female'] {
+            --user-checked-color-rgb: var(--user-female-pink-rgb);
+        }
+
+        &[for='female'],
+        &[for='male'] {
+            &:hover {
+                border-color: rgb(var(--user-checked-color-rgb));
+                color: rgb(var(--user-checked-color-rgb)) !important;
+            }
+
+            &.active {
+                border-color: rgba(var(--user-checked-color-rgb)) !important;
+                background-color: rgba(var(--user-checked-color-rgb), 0.4) !important;
+                box-shadow: 0 0 0 0.3rem rgba(var(--user-checked-color-rgb), 0.28) !important;
+            }
+        }
+
+        &.glowBtn:hover {
+            border-color: rgb(var(--user-checked-color-rgb)) !important;
+            // color: var(--user-btn-font-color);
+            color: white !important;
+        }
+
+        &.active {
+            // background-color: var(--bs-form-control-bg) !important;
+            background-color: rgba(var(--user-checked-color-rgb)) !important;
+            border-color: rgb(var(--user-checked-color-rgb)) !important;
+            box-shadow: 0 0 0 0.3rem rgba(var(--user-checked-color-rgb), 0.3);
+            outline: 0;
+            color: var(--user-checked-font-color) !important;
+            // color: var(--user-font-color) !important;
+        }
+    }
+}
+
+
+// submit reset
+.btnZone {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+
+    @media (max-width: 768px) {
+        & {
+            flex-wrap: wrap;
+        }
+
+        .glowBtn-capsule {
+            padding: 15px 30px;
+            // width: 200px;
+            width: 100%;
+
+            font-size: 1.1em;
+
+            &:last-child {
+                margin-top: 15px;
+            }
+        }
+    }
+}
+
+
+// 所有输入框的hover样式
+.valueBox {
+    transition: border-color 0s,
+        color 0s;
+
+    &:hover {
+        border-color: rgb(var(--user-checked-color-rgb));
+
+        &~label {
+            color: var(--user-btn-font-color);
+        }
+    }
+}
+
+// datepicker 美化
+.datepicker-dropdown {
+    border-color: rgb(var(--user-checked-color-rgb));
+
+    // box-shadow: 0 0 0 0.3rem rgba(var(--user-checked-color-rgb), 0.3);
+    box-shadow: 0 0 0 0.3rem rgba(var(--user-checked-color-rgb), 0.3), rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+        rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+
+    padding: 7px 13px !important;
+
+    height: fit-content !important;
+    width: fit-content !important;
+
+    transform: scale(1.02) translateX(1px);
+
+    & * {
+        font-weight: normal !important;
+        // color: var(rgb(--user-darker-color-rgb));
+        color: var(--user-btn-font-color);
+
+        transition: none;
+    }
+
+    .datepicker-switch:hover {
+        background-color: rgb(var(--user-checked-color-rgb)) !important;
+        color: white;
+    }
+
+    thead {
+
+        .prev,
+        .next {
+            font-size: 1.3em;
+
+            &:hover {
+                background-color: rgb(var(--user-checked-color-rgb)) !important;
+                color: white;
+            }
+        }
+    }
+
+    tfoot {
+        th:hover {
+            background-color: rgb(var(--user-checked-color-rgb)) !important;
+            color: white;
+        }
+    }
+
+    th,
+    td {
+        padding: 5px;
+    }
+
+    td {
+        &.day {
+
+            &:hover,
+            &.today,
+            &.active {
+                background-image: none !important;
+                background-color: rgb(var(--user-checked-color-rgb)) !important;
+                color: white;
+            }
+        }
+
+        &.today:hover {
+            color: white !important;
+        }
+
+        .month,
+        .year {
+
+            &:hover,
+            &.focused,
+            &.active {
+                background-image: none !important;
+                background-color: rgb(var(--user-checked-color-rgb)) !important;
+                color: white;
+            }
+        }
+    }
+}

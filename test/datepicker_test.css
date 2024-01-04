@@ -1,0 +1,56 @@
+.inputDate .datepicker-inline .table-condensed tr {
+    background: transparent;
+}
+
+.inputDate .datepicker-inline {
+    width: 100%;
+}
+
+.inputDate .datepicker table {
+    border: none;
+}
+
+.table-condensed th.dow {
+    background: #E7ECF6;
+}
+
+.inputDate .datepicker th,
+.datepicker td {
+    border-radius: 0;
+}
+
+.inputDate .datepicker-inline .table-condensed tr:nth-child(odd) th {
+    background: #0C69BC;
+    font-size: 16px;
+    color: #FFFFFF;
+    letter-spacing: 0.11px;
+}
+
+.inputDate table tr:first-child th:first-child {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.inputDate table tr:first-child th:last-child {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.table-condensed th.dow:first-child {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.table-condensed th.dow:last-child {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.inputDate .datepicker .active {
+    background-color: #BF1629;
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    background-image: none;
+    filter: none;
+}

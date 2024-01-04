@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>carousel</title>
+        <link
+            rel="shortcut icon"
+            href="https://p1.music.126.net/1lqMPskW7B75S1Km452I_Q==/18762066417668140.jpg?param=130y130"
+            type="image/x-icon"
+        />
+        <link
+            rel="shortcut icon"
+            href="http://p1.music.126.net/CG2gLeoVVjdETC1GKAPm9Q==/19006157997999739.jpg?param=34y34"
+            type="image/x-icon"
+        />
+        <!-- jQuery -->
+        <script src="../jQuery/awesome-jquery-3.7.1.js"></script>
+
+        <!-- bootstrap.css -->
+        <link rel="stylesheet" href="../bootstrap/css/bootstrap.css" />
+
+        <!-- bootstrap.js -->
+        <script src="../bootstrap/js/bootstrap.js"></script>
+
+        <style>
+            .carousel-item {
+                height: 45vh;
+            }
+
+            .carousel-item p span:nth-child(-n + 2) {
+                margin-right: 0.8rem;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div id="carouselCaptions" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button
+                        type="button"
+                        data-bs-target="#carouselCaptions"
+                        data-bs-slide-to="0"
+                        class="active"
+                        aria-current="true"
+                        aria-label="Slide 1"
+                    ></button>
+                    <button
+                        type="button"
+                        data-bs-target="#carouselCaptions"
+                        data-bs-slide-to="1"
+                        aria-label="Slide 2"
+                    ></button>
+                    <button
+                        type="button"
+                        data-bs-target="#carouselCaptions"
+                        data-bs-slide-to="2"
+                        aria-label="Slide 3"
+                    ></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="../img/mint_green.jpg" class="d-block w-100" alt="..." />
+                        <div class="carousel-caption d-md-block">
+                            <h5 class="display-6 text-uppercase">mint green</h5>
+                            <p><span>HEX: #b4ecc4</span><span>RGB: 180 236 196</span><span>HSL: 137 59% 81%</span></p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../img/pink.jpg" class="d-block w-100" alt="..." />
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5 class="display-6 text-uppercase">pink</h5>
+                            <p><span>HEX: #fec0cb</span><span>RGB: 254 192 203</span><span>HSL: 349 97% 87%</span></p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="../img/lilac.jpg" class="d-block w-100" alt="..." />
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5 class="display-6 text-uppercase">lilac</h5>
+                            <p><span>HEX: #c9b4c7</span><span>RGB: 201 181 199</span><span>HSL: 306 16% 75%</span></p>
+                        </div>
+                    </div>
+                </div>
+                <button
+                    class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#carouselCaptions"
+                    data-bs-slide="prev"
+                >
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button
+                    class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#carouselCaptions"
+                    data-bs-slide="next"
+                >
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </body>
+</html>

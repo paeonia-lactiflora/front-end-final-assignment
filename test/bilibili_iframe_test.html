@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>bilibili_iframe_test</title>
+        <!-- jQuery -->
+        <script src="../jQuery/awesome-jquery-3.7.1.js"></script>
+
+        <!-- bootstrap.css -->
+        <link rel="stylesheet" href="../bootstrap/css/bootstrap.css" />
+
+        <!-- bootstrap.js -->
+        <script src="../bootstrap/js/bootstrap.js"></script>
+
+        <style>
+            .bpx-player-enter-button {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <iframe
+            src="//player.bilibili.com/player.html?aid=684226277&bvid=BV1hU4y117vv&cid=722104370&p=1"
+            scrolling="no"
+            border="0"
+            frameborder="no"
+            framespacing="0"
+            allowfullscreen="true"
+        >
+        </iframe>
+
+        <script>
+            $(function () {
+                setTimeout(() => {
+                    $('.bpx-player-enter-button').css('display', 'none')
+                    $('.bpx-player-enter-button').css('visibility', 'hidden')
+                }, 500)
+            })
+        </script>
+    </body>
+</html>

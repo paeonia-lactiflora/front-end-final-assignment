@@ -1,0 +1,241 @@
+:root {
+  --user-male-blue-rgb: var(--user-blue-rgb);
+  --user-female-pink-rgb: 214, 51, 132;
+  caret-color: var(--user-btn-font-color);
+}
+/*customize*/
+.form-control {
+  background-color: transparent;
+  border-color: rgb(var(--user-border-color-rgb));
+}
+.form-control:focus {
+  background-color: transparent;
+  border-color: rgb(var(--user-checked-color-rgb));
+  box-shadow: 0 0 0 0.3rem rgba(var(--user-checked-color-rgb), 0.3);
+  outline: 0;
+}
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label {
+  opacity: 1;
+  color: var(--user-btn-font-color);
+}
+/*customize*/
+body {
+  display: flex;
+  height: 100vh;
+}
+.container {
+  margin: auto;
+  padding: 2rem;
+  max-width: 1000px;
+  border-radius: 15px;
+  transform: translateY(-3vh);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+@media (max-width: 768px) {
+  body {
+    --user-phone-gutter-x: 0.8rem;
+  }
+  .container {
+    padding: 2rem var(--user-phone-gutter-x);
+    padding-top: 4.2rem;
+    border-radius: 0;
+    transform: translateY(0);
+  }
+  .homeBtn,
+  .audioBtn,
+  .themeBtn {
+    top: var(--user-phone-gutter-x);
+  }
+  .homeBtn {
+    left: var(--user-phone-gutter-x);
+  }
+  .homeBtn svg {
+    transform: translate(0.5px, 0.5px);
+  }
+  .audioBtn {
+    right: var(--user-phone-gutter-x);
+  }
+  .themeBtn {
+    left: 50%;
+    transform: translateX(-50%) scale(1.01) !important;
+  }
+}
+.form-floating > label {
+  left: 5px;
+}
+#selfIntroduction {
+  height: 100px;
+}
+.birthdayBox {
+  height: 58px;
+}
+.birthdayBox input {
+  height: 100%;
+}
+.choiceRow {
+  padding: 0;
+}
+.choiceRow .genderZone,
+.choiceRow .hobbiesZone {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  flex-wrap: wrap;
+  margin-top: 0;
+  padding-right: 0;
+}
+.choiceRow .genderZone.is-valid > .valid-feedback,
+.choiceRow .hobbiesZone.is-valid > .valid-feedback {
+  display: block;
+}
+.choiceRow .genderZone.is-invalid > .invalid-feedback,
+.choiceRow .hobbiesZone.is-invalid > .invalid-feedback {
+  display: block;
+}
+.choiceRow .hobbiesZone {
+  padding-left: 20px;
+}
+.choiceRow .genderZone {
+  padding-left: 19px;
+}
+.choiceRow .genderZone .form-check {
+  width: 47%;
+}
+@media (max-width: 768px) {
+  .choiceRow .genderZone {
+    margin-top: var(--bs-gutter-y);
+  }
+}
+.form-check {
+  margin: 0;
+  padding: 0;
+  height: 58px;
+  width: 15%;
+}
+.form-check input {
+  display: none;
+}
+.form-check input.is-invalid ~ label {
+  border-color: var(--bs-danger);
+}
+.form-check label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  border: var(--bs-border-width) solid rgb(var(--user-border-color-rgb));
+  border-radius: 5px;
+  color: var(--user-font-color);
+  cursor: pointer;
+}
+.form-check label[for='male'] {
+  --user-checked-color-rgb: var(--user-male-blue-rgb);
+}
+.form-check label[for='female'] {
+  --user-checked-color-rgb: var(--user-female-pink-rgb);
+}
+.form-check label[for='female']:hover,
+.form-check label[for='male']:hover {
+  border-color: rgb(var(--user-checked-color-rgb));
+  color: rgb(var(--user-checked-color-rgb)) !important;
+}
+.form-check label[for='female'].active,
+.form-check label[for='male'].active {
+  border-color: rgba(var(--user-checked-color-rgb)) !important;
+  background-color: rgba(var(--user-checked-color-rgb), 0.4) !important;
+  box-shadow: 0 0 0 0.3rem rgba(var(--user-checked-color-rgb), 0.28) !important;
+}
+.form-check label.glowBtn:hover {
+  border-color: rgb(var(--user-checked-color-rgb)) !important;
+  color: white !important;
+}
+.form-check label.active {
+  background-color: rgba(var(--user-checked-color-rgb)) !important;
+  border-color: rgb(var(--user-checked-color-rgb)) !important;
+  box-shadow: 0 0 0 0.3rem rgba(var(--user-checked-color-rgb), 0.3);
+  outline: 0;
+  color: var(--user-checked-font-color) !important;
+}
+.btnZone {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+@media (max-width: 768px) {
+  .btnZone {
+    flex-wrap: wrap;
+  }
+  .btnZone .glowBtn-capsule {
+    padding: 15px 30px;
+    width: 100%;
+    font-size: 1.1em;
+  }
+  .btnZone .glowBtn-capsule:last-child {
+    margin-top: 15px;
+  }
+}
+.valueBox {
+  transition: border-color 0s, color 0s;
+}
+.valueBox:hover {
+  border-color: rgb(var(--user-checked-color-rgb));
+}
+.valueBox:hover ~ label {
+  color: var(--user-btn-font-color);
+}
+.datepicker-dropdown {
+  border-color: rgb(var(--user-checked-color-rgb));
+  box-shadow: 0 0 0 0.3rem rgba(var(--user-checked-color-rgb), 0.3), rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  padding: 7px 13px !important;
+  height: fit-content !important;
+  width: fit-content !important;
+  transform: scale(1.02) translateX(1px);
+}
+.datepicker-dropdown * {
+  font-weight: normal !important;
+  color: var(--user-btn-font-color);
+  transition: none;
+}
+.datepicker-dropdown .datepicker-switch:hover {
+  background-color: rgb(var(--user-checked-color-rgb)) !important;
+  color: white;
+}
+.datepicker-dropdown thead .prev,
+.datepicker-dropdown thead .next {
+  font-size: 1.3em;
+}
+.datepicker-dropdown thead .prev:hover,
+.datepicker-dropdown thead .next:hover {
+  background-color: rgb(var(--user-checked-color-rgb)) !important;
+  color: white;
+}
+.datepicker-dropdown tfoot th:hover {
+  background-color: rgb(var(--user-checked-color-rgb)) !important;
+  color: white;
+}
+.datepicker-dropdown th,
+.datepicker-dropdown td {
+  padding: 5px;
+}
+.datepicker-dropdown td.day:hover,
+.datepicker-dropdown td.day.today,
+.datepicker-dropdown td.day.active {
+  background-image: none !important;
+  background-color: rgb(var(--user-checked-color-rgb)) !important;
+  color: white;
+}
+.datepicker-dropdown td.today:hover {
+  color: white !important;
+}
+.datepicker-dropdown td .month:hover,
+.datepicker-dropdown td .year:hover,
+.datepicker-dropdown td .month.focused,
+.datepicker-dropdown td .year.focused,
+.datepicker-dropdown td .month.active,
+.datepicker-dropdown td .year.active {
+  background-image: none !important;
+  background-color: rgb(var(--user-checked-color-rgb)) !important;
+  color: white;
+}

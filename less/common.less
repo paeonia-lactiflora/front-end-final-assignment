@@ -1,0 +1,394 @@
+@charset "UTF-8";
+
+// :root,
+[data-theme='light'] {
+    // 有用
+    --bs-white: #fff;
+    // 有用
+    --bs-light: #f8f9fa;
+    // 有用
+    --bs-body-color: #212529;
+    // 有用
+    --bs-border-color-rgb: 222, 226, 230;
+
+    // light花瓣粉
+    // darker
+    --user-darker-color-rgb: 146, 71, 89;
+    // lighter
+    --user-lighter-color-rgb: 255, 217, 233;
+    // middle
+    --user-middle-color-rgb: 255, 177, 192;
+
+    // 有用
+    caret-color: var(--user-checked-color-rgb);
+
+    // 字体颜色
+    --user-font-color: var(--bs-body-color);
+
+    // 按钮字体颜色
+    --user-btn-font-color: rgb(var(--user-darker-color-rgb));
+
+    // 边框颜色
+    --user-border-color-rgb: var(--bs-border-color-rgb);
+    // --user-border-color-rgb: var(--user-font-color);
+    // --user-border-color-rgb: var(--user-middle-color-rgb);
+    // --user-border-color-rgb: var(--bs-border-color-rgb);
+
+    // 选中颜色
+    // --user-checked-color-rgb: var(--user-border-color-rgb);
+    // --user-checked-color-rgb: var(--user-lighter-color-rgb);
+    --user-checked-color-rgb: var(--user-middle-color-rgb);
+
+    // 背景颜色
+    // --user-bg-color: var(--bs-white);
+    --user-bg-color: rgb(var(--user-lighter-color-rgb));
+    // --user-bg-color: rgb(var(--user-middle-color-rgb));
+
+    // 选中选项的字体颜色
+    // --user-checked-font-color: var(--bs-light);
+    --user-checked-font-color: rgb(var(--user-darker-color-rgb));
+    --user-checked-font-color: var(--bs-light);
+    // sidebar
+    --user-sidebar-color-rgb: var(--user-lighter-color-rgb);
+
+    --bs-dropdown-color: var(--user-body-color);
+
+    // 背景颜色
+    --bs-body-bg: var(--user-bg-color);
+
+    // container背景颜色
+    --user-container-bg-color: var(--bs-white);
+    // --user-container-bg-color: #e1e1e1;
+    // --user-container-bg-color: var(--bs-body-bg);
+
+    // carousel img brightness
+    --user-carousel-img-brightness: 1;
+
+    // card img 亮度
+    --user-card-brightness: .7;
+
+    // card img hover 亮度
+    --user-hover-brightness: 1;
+
+    // scrollbar-thumb color
+    --user-scrollbar-thumb-color: rgb(var(--user-checked-color-rgb));
+}
+
+[data-theme='dark'] {
+    --user-blue-rgb: 13, 110, 253;
+
+    // useful
+    --bs-body-color: #d1b9b9;
+
+    --bs-body-color-rgb: 173, 181, 189;
+    // useful
+    --bs-body-bg: #212529;
+
+    // dark花瓣粉
+    // darker
+    --user-darker-color-rgb: 117, 48, 65;
+    // lighter
+    --user-lighter-color-rgb: 255, 177, 192;
+    // middle
+    --user-middle-color-rgb: 144, 110, 116;
+    // sidebar
+    --user-sidebar-color-rgb: 48, 25, 30;
+
+    // 字体颜色
+    --user-font-color: var(--bs-body-color);
+    // --user-font-color: rgb(var(--user-lighter-rgb));
+    // --user-font-color: rgb(var(--user-middle-rgb));
+    // 按钮字体颜色
+    --user-btn-font-color: rgb(var(--user-lighter-color-rgb));
+    // 边框颜色
+    --user-border-color-rgb: var(--user-middle-color-rgb);
+    // --user-border-color-rgb: var(--user-lighter-color-rgb);
+    // 选中颜色
+    --user-checked-color-rgb: var(--user-border-color-rgb);
+    // 选中选项的字体颜色
+    --user-checked-font-color: var(--bs-light);
+    // 背景颜色
+    --user-bg-color: rgb(79, 52, 57);
+
+    // bs
+    --bs-body-bg: var(--user-bg-color);
+
+    // container背景颜色
+    --user-container-bg-color: var(--bs-body-bg);
+
+    // 男色 darker
+    --user-male-blue-rgb: var(--user-blue-rgb);
+
+    // carousel img brightness
+    --user-carousel-img-brightness: .7;
+
+    // card img 亮度
+    --user-card-brightness: .6;
+
+    // card img hover 亮度
+    --user-hover-brightness: .8;
+
+    // scrollbar-thumb color
+    --user-scrollbar-thumb-color: rgb(var(--user-checked-color-rgb));
+}
+
+// 微调
+[data-theme='light'] {
+    .modal {
+        // 模态弹框分割线颜色
+        --bs-modal-header-border-color: rgb(var(--user-middle-color-rgb));
+        --bs-modal-footer-border-color: var(--bs-modal-header-border-color);
+    }
+}
+
+// 所有元素
+* {
+    --user-black-rgb: 0, 0, 0;
+
+    transition: background-color .2s ease-in-out;
+
+    &::selection {
+        background-color: rgb(var(--user-checked-color-rgb));
+        color: var(--user-checked-font-color);
+    }
+}
+
+// 通用类 universal
+.shadow {
+    box-shadow: 0 0.5rem 1rem rgba(var(--user-black-rgb), 0.15) !important;
+}
+
+.displayFont {
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+// 统一格式
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: inherit;
+}
+
+body {
+    background-color: var(--user-bg-color);
+    color: var(--user-font-color);
+}
+
+.container {
+    background-color: var(--user-container-bg-color);
+    // box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.sun,
+.moon {
+    display: none;
+}
+
+[data-theme='dark'] {
+    .sun {
+        display: block;
+    }
+
+    .moon {
+        display: none;
+    }
+}
+
+[data-theme='light'] {
+    .moon {
+        display: block;
+    }
+
+    .sun {
+        display: none;
+    }
+}
+
+::-webkit-scrollbar {
+    width: .5rem;
+    height: .5rem;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--user-scrollbar-thumb-color);
+    border-radius: 999px;
+}
+
+.glowBtn {
+    // glow 效果必须要相对定位
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 2px solid rgb(var(--user-checked-color-rgb));
+    background-color: transparent;
+
+    color: var(--user-btn-font-color);
+
+    cursor: pointer;
+    /* user-select: none; */
+
+    transition: all .2s;
+
+    &.glowBtn-circle {
+        border-radius: 50%;
+        height: 2.5rem;
+        width: 2.5rem;
+    }
+
+    &.glowBtn-capsule {
+        border-radius: 999px;
+        padding: 17px 20px;
+        width: 210px;
+    }
+
+    &.glowBtn-bold {
+        font-size: 1.3em;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    &:hover {
+        transform: scale(1.04);
+        background-color: rgb(var(--user-checked-color-rgb));
+        color: var(--user-checked-font-color);
+    }
+
+    &:hover::after {
+        content: '';
+
+        position: absolute;
+        inset: -1px;
+        z-index: -1;
+
+        background-color: inherit;
+        filter: blur(30px);
+    }
+
+    &:active {
+        transform: scale(1.01);
+    }
+
+}
+
+.scale-lg {
+    &:hover {
+        transform: scale(1.14);
+    }
+
+    &:active {
+        transform: scale(1.03);
+    }
+}
+
+.homeBtn,
+.infoBtn,
+.themeBtn,
+.audioBtn {
+    position: fixed;
+
+    svg {
+        height: 75%;
+    }
+}
+
+// 首页按钮
+.homeBtn {
+    left: 30px;
+    top: 30px;
+
+    svg {
+        transform: translate(-0.5px, -1px);
+    }
+}
+
+// 信息按钮
+.infoBtnTooltip {
+
+    // 因为infoBtn 有两个 data-bs-toggle 属性: modal 和 tooltip, 所以要单独用一个tooltip div来包住infoBtn
+    .infoBtn {
+        position: static;
+    }
+
+    position: fixed;
+    top: 30px;
+    right: 30px;
+}
+
+#infoModal {
+    // transform: translateY(-3rem);
+}
+
+// 主题按钮
+.themeBtn {
+    left: 30px;
+    bottom: 30px;
+
+    .sun {
+        transform: translateX(-0.5px);
+    }
+
+    .moon {
+        // display: none;
+    }
+}
+
+// 播放按钮
+.audioBtn {
+    right: 30px;
+    bottom: 30px;
+
+    .playSvg {
+        transform: translateX(1px);
+    }
+
+    .pauseSvg {
+        display: none;
+        transform: translateX(-1px);
+    }
+}
+
+.modal {
+    line-height: 1.8rem;
+
+    .modal-content {
+        border: none;
+    }
+
+    .modal-title {
+        color: var(--user-font-color);
+    }
+
+    .modal-body {
+        li {
+            position: relative;
+        }
+
+        .badge {
+            display: none;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-55%);
+            right: 15px;
+        }
+    }
+
+    kbd {
+        margin-right: 2px;
+    }
+}
+
+// copyright
+d1v {
+    color: var(--user-btn-font-color);
+}
